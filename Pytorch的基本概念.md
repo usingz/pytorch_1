@@ -2,6 +2,7 @@ Pytorch是一个深度学习框架，Pytorch的优势在于其编写是动态的
 1. 安装Pytorch
 
 由于我本身是使用Windows系统的（有时候也会用Ubuntu）所以介绍如何在Windows下在安装Pytorch。首先我们将anaconda3安装上，下载地址为[https://www.anaconda.com/download/](https://www.anaconda.com/download/) ，可根据系统类型选择安装。安装好anaconda之后在命令符中输入conda -V，能正确输出anaconda版本号则成功。
+
 1.1图形化安装Pytorch
 安装好anaconda之后我选择了一种较为简单的方式安装Pytorch，即在anaconda创建的虚拟环境中搜索torch，之后一键点击安装即可。
 安装好之后使用一段简单的代码测试一下。
@@ -19,7 +20,7 @@ print(cudnn.is_acceptable(xx))
 1.2命令行安装Pytorch
 我们打开安装好的anaconda powershell promt，输入命令conda install pytorch即可。这也是较为简单的方法，如出现问题欢迎交流。
 
-1. Pytorch的基础概念
+2. Pytorch的基础概念
 
 2.1张量
 Pytorch中的基本单位也是张量英文中叫Tensor，是Pytorch中的基础运算单位，张量表示的是一个多维的矩阵。Pytorch中的张量可以在GPU上运行，而这可以加快我们训练神经网络的时间。下面我们编写一个生成张量的简单例子。
@@ -41,7 +42,7 @@ print(x.grad,y.grad)
 ```
 首先我们创建两个张量，之后对它们进行求和，设置requires_grad是为了对该张量进行自动求导，Pytorch会记录该张量的每一步操作历史并自动计算。之后调用backward()进行求导，计算出结果之后将会保存到对应变良的grad属性里面，我们可以调用x.grad查看梯度。
 
-1. 使用Pytorch编写神经网络算法
+3. 使用Pytorch编写神经网络算法
 
 本次我们选择的是编写手写数字识别的神经网络。由于本人偏向于自然语言处理对图像处理还是了解不深。来看看代码吧。
 ```
